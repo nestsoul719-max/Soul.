@@ -132,3 +132,130 @@ body {
     transform: translateY(0);
   }
 }
+/* 🌷 Soul – ChatGPT-style layout with pookie lavender theme 🌷 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Page background (off-white lavender) */
+body {
+  background: #f5f2fb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* App shell (ChatGPT-like centered card) */
+.app {
+  width: 100%;
+  max-width: 420px;
+  height: 92vh;
+  background: #fbf8ff;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 28px rgba(165, 140, 220, 0.22);
+  overflow: hidden;
+}
+
+/* Header (simple like ChatGPT) */
+.header {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #6b3fa0;
+  background: linear-gradient(90deg, #f6c1da, #d8c7ff);
+}
+
+/* Chat area */
+.chat-box {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Message bubbles (ChatGPT spacing) */
+.bot-msg,
+.user-msg {
+  max-width: 85%;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  word-wrap: break-word;
+  animation: pop 0.18s ease-in;
+}
+
+/* AI message (left, soft lavender) */
+.bot-msg {
+  background: #efe9ff;
+  color: #4b356e;
+  border-top-left-radius: 6px;
+}
+
+/* User message (right, pink) */
+.user-msg {
+  background: #ffd8ea;
+  color: #6b2a4f;
+  margin-left: auto;
+  border-top-right-radius: 6px;
+}
+
+/* Input area (ChatGPT-like bar) */
+.input-area {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background: #f3ecff;
+  border-top: 1px solid #ece5ff;
+}
+
+/* Text input */
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* Heart send button 💖 */
+.input-area button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  background: linear-gradient(135deg, #ff8fbf, #caa9ff);
+  box-shadow: 0 4px 12px rgba(255, 143, 191, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.input-area button:active {
+  transform: scale(0.94);
+  box-shadow: 0 2px 8px rgba(255, 143, 191, 0.35);
+}
+
+/* Scrollbar (soft) */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: #d9caff;
+  border-radius: 10px;
+}
+
+/* Tiny animation */
+@keyframes pop {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
