@@ -1,0 +1,134 @@
+/* 🌷 Soul.nest – Pookie Lavender Theme 🌷 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Background */
+body {
+  background: linear-gradient(180deg, #f6efff, #fff1f8);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* App container */
+.app {
+  width: 100%;
+  max-width: 420px;
+  height: 92vh;
+  background: #fff7fc;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(186, 150, 230, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, #f7b4d9, #d7c2ff);
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #6d3a7b;
+  letter-spacing: 0.5px;
+}
+
+/* Chat area */
+.chat-box {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Messages */
+.bot-msg,
+.user-msg {
+  max-width: 80%;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: fadeIn 0.25s ease-in;
+}
+
+/* Bot bubble */
+.bot-msg {
+  background: #efe5ff;
+  color: #5b3b7a;
+  border-bottom-left-radius: 6px;
+}
+
+/* User bubble */
+.user-msg {
+  background: #ffd6eb;
+  color: #7a2e55;
+  margin-left: auto;
+  border-bottom-right-radius: 6px;
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fdf0ff;
+}
+
+/* Text input */
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* Heart send button */
+.input-area button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff8fc7, #caa8ff);
+  box-shadow: 0 5px 15px rgba(255, 143, 199, 0.45);
+  transition: transform 0.15s ease;
+}
+
+.input-area button:active {
+  transform: scale(0.92);
+}
+
+/* Smooth scroll */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #e3cfff;
+  border-radius: 10px;
+}
+
+/* Cute animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
