@@ -74,3 +74,70 @@ async function sendMessage() {
     );
   }
 }
+// 🌷 Soul – ChatGPT-style Conversation Logic 🌷
+
+const chatBox = document.getElementById("chatBox");
+const userInput = document.getElementById("userInput");
+
+// helper: message add
+function addMessage(text, className) {
+  const msg = document.createElement("div");
+  msg.className = className;
+  msg.innerText = text;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// typing indicator
+function showTyping() {
+  const typing = document.createElement("div");
+  typing.className = "bot-msg";
+  typing.id = "typing";
+  typing.innerText = "typing…";
+  chatBox.appendChild(typing);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function removeTyping() {
+  const typing = document.getElementById("typing");
+  if (typing) typing.remove();
+}
+
+// send message
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
+  // user bubble
+  addMessage(text, "user-msg");
+  userInput.value = "";
+
+  // typing
+  showTyping();
+
+  try {
+    // 👇 backend endpoint (ye tum baad mein banaogi)
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: text
+      })
+    });
+
+    const data = await response.json();
+    removeTyping();
+
+    // AI reply
+    addMessage(data.reply, "bot-msg");
+
+  } catch (error) {
+    removeTyping();
+    addMessage(
+      "Shona 🥺 thoda sa issue aa gaya… phir try karna 💗",
+      "bot-msg"
+    );
+  }
+}
